@@ -42,7 +42,7 @@ getopts('Ast:');
 my $al = NethServer::AccountsList->new();
 my ($systemName, $domainName) = split(/\./, Sys::Hostname::hostname(), 2);
 my $sssd = NethServer::SSSD->new();
-my $groupName = shift;
+my $groupName = join(" ",@ARGV);
 
 $groupName =~ s/\@$domainName$//; #trim @domain suffix
 
